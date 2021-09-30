@@ -1,0 +1,45 @@
+<div>
+  <h2>{{title}}</h2>
+  <!-- <div class="btnFlex">
+    <input type="search" name="Search" id="" (click)="onSearchData()"  placeholder="Search..." > 
+    <mat-icon (click)="onSearchData()" class="maticon">search</mat-icon></div> -->
+  <!-- <input type="text" name="Search" id="" (click)="onSearchData()" > -->
+  <section>
+    <span class="search">
+    <input type="search" name="Search" id="" (keyup)="onSearchData()"   placeholder="Search..." [formControl]="searchField" style="height: 36px;width: 184px;"  > 
+   
+  </span>
+    <button mat-button *ngIf="selectedRow" class="editBtn" (click)="delete()">Delete</button>
+    <button mat-button *ngIf="selectedRow" class="editBtn" (click)="openDialogForEdit()">Edit</button>
+    <button mat-button (click)="openDialog()">Add</button>
+  </section>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <!-- <th>ID  -->
+        <!-- <button mat-button (click)='onSort()' class="matIcon">Sort</button> -->
+      <!-- </th>  -->
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let d of newData" (click)="select(d)" [class.selected]='d === selectedRow'>
+      <td>{{d.company}}  </td>
+      <!-- <td>{{d.id}} </td> -->
+      <td>{{d.contact}}</td>
+      <td>{{d.country}}</td>
+      
+    </tr>
+  </tbody>
+  <mat-paginator [length]="data.length" [pageSize]="10" [pageSizeOptions]="[5,10,15,20]" aria-label="Select page"
+    (page)="onPageChange($event)" >
+  </mat-paginator>
+</table>
+
+
+<!-- <mat-slider min="1" max="100" step="1" value="50"></mat-slider> -->

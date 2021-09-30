@@ -1,0 +1,55 @@
+<div class="divStyle">
+  <h2 class="title">Form</h2>
+  <mat-icon (click)='close()' class="matIcon">close</mat-icon>
+</div>
+<br>
+
+<form [formGroup]="profileForm"  class="data">
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose Company</mat-label>
+    <mat-select formControlName="company">
+      <input matInput placeholder="" value="">
+      <!-- <mat-option>None</mat-option> -->
+      <mat-option value="CHI">CHI</mat-option>
+      <mat-option value="Netsol">Netsol</mat-option>
+      <mat-option value="Nescom">Nescom</mat-option>
+      <mat-option value="Systems Limited">Systems Limited</mat-option>
+      <mat-option value="AHCCreationz">AHC Creationz</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>ID</mat-label>
+    <input matInput placeholder="Contact" value="" formControlName="id" type="number">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Contact</mat-label>
+    <input matInput placeholder="Contact" value="" formControlName="contact">
+  </mat-form-field>
+  <br>
+  
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose Country</mat-label>
+    <mat-select formControlName="country">
+      <input matInput placeholder="" value="">
+      <mat-option value="Pakistan">Pakistan</mat-option>
+      <mat-option value="US">US</mat-option>
+      <mat-option value="Italy">Italy</mat-option>
+      <mat-option value="UAE">UAE</mat-option>
+      <mat-option value="KSA">KSA</mat-option>
+      <mat-option value="Spain">Spain</mat-option>
+      <mat-option value="Swedan">Swedan</mat-option>
+      <mat-option value="Ireland">Ireland</mat-option>
+      <mat-option value="South Africa">South Africa</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+  <button mat-button type="show" (click)="showdata()" class="save">Save</button>
+
+</form>
